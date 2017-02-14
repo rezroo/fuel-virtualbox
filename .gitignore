@@ -1,5 +1,7 @@
 # vim swap files
 .*.swp
+# vim backup files
+.*.*~
 
 # services' runtime files
 *.log

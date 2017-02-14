@@ -35,10 +35,14 @@ echo "Сlean previous installation if exists..."
 echo
 
 # Сreate host-only interfaces
-./actions/create-interfaces.sh || exit 1
+# For win-10 we comment this problematic part of auto install, and
+# instead precreate the hostonly interfaces manually before launch.
+# The list of hostonly interfaces to use are saved in fuel-net-config.log
+# which should be loaded in other scripts and used.
+# ./actions/create-interfaces.sh || exit 1
 
 # Create and launch master node
 ./actions/master-node-create-and-install.sh || exit 1
 
 # Create and launch slave nodes
-./actions/slave-nodes-create-and-boot.sh || exit 1
+#./actions/slave-nodes-create-and-boot.sh || exit 1

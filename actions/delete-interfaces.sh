@@ -23,6 +23,11 @@ source ./config.sh
 source ./functions/vm.sh
 source ./functions/network.sh
 
+if [[ "${rm_network}" == "-1" ]]; then
+  echo "Leaving hostonly interfaces as is - no change made..."
+  exit 0
+fi
+
 # Delete host-only interfaces
 if [[ "${rm_network}" == "0" ]]; then
     delete_fuel_ifaces

@@ -29,7 +29,8 @@ vm_name_prefix=fuel-
 # By default, all available vbox network interfaces will be removed.
 # 0 - don't remove all vbox networks. Remove only fuel networks if they exist
 # 1 - remove all vbox networks
-rm_network=1
+# -1 - don't touch the hostonly interfaces (works best for win-10)
+rm_network=-1
 
 # Please add the IPs accordingly if you going to create non-default NICs number
 # 10.20.0.1/24   - Mirantis OpenStack Admin network
